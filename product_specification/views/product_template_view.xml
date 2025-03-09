@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_only_form_view" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page string="Specification" name="product_spec">
+                        <field name="spec_line_ids" widget="one2many" context="{'show_attribute': False}">
+                            <list string="Specification" editable="bottom">
+                                <field name="sequence" widget="handle" />
+                                <field name="categ_id" column_invisible="True" />
+                                <field name="product_variant_ids" widget="many2many_tags" groups="product.group_product_variant" domain="[('product_tmpl_id', '=', parent.id)]" column_invisible="parent.product_variant_count &lt; 2"/>
+                                <field name="spec_id" readonly="id!=False" domain="['|',('product_categories','=',False),('product_categories','child_of',parent.categ_id)]" />
+                                <field name="value_id" options="{'no_create_edit': True}" context="{'default_spec_id': spec_id, 'show_attribute': False}" />
+                            </list>
+                        </field>
+                        <p class="oe_grey oe_edit_only">
+                            <strong>Info</strong>: please make sure all specification are correct. </p>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <!-- 
+        <record model="ir.ui.view" id="product_form_view_specification">
+            <field name="name">product.product.sale.order</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page string="Specification" name="product_spec">
+                        <field name="spec_line_ids" widget="one2many" context="{'show_attribute': False}">
+                            <list string="Specification" editable="bottom">
+                                <field name="spec_id" readonly="id!=False" />
+                                <field name="categ_id" readonly="id!=False" />
+                                <field name="value_id" options="{'no_create_edit': True}" context="{'default_spec_id': spec_id, 'show_attribute': False}" />
+                                <field name="note" optional="hide"/>
+                            </list>
+                        </field>
+                        <p class="oe_grey oe_edit_only">
+                            <strong>Info</strong>: please make sure all specification are correct. </p>
+                    </page>
+                </xpath>
+            </field>
+        </record> 
+        -->
+        <record id="product_template_spec_line_form" model="ir.ui.view">
+            <field name="name">product.spec.line.form</field>
+            <field name="model">product.spec.line</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Product Specification">
+                    <group name="main_field">
+                        <group>
+                            <field name="spec_id" />
+                            <field name="categ_id" />
+                        </group>
+                        <group>
+                            <field name="value_id" />
+                        </group>
+                    </group>
+                    <field name="note" />
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

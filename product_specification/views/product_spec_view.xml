@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_product_spec_form">
+            <field name="name">Product Specification</field>
+            <field name="model">product.spec</field>
+            <field name="arch" type="xml">
+                <form string="Product Specification">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="is_used_on_products" />
+                                <field name="sequence" invisible="1" />
+                            </group>
+                            <group>
+                                <field name="categ_id" string="Category"/>
+                                <field name="product_categories" widget="many2many_tags" />
+                                <field name="spec_line_ids" invisible="1" />
+                                <field name="product_ids" invisible="1" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Values">
+                                <field name="value_ids">
+                                    <list string="Values" editable="bottom">
+                                        <field name="sequence" widget="handle" />
+                                        <field name="name" />
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Description">
+                                <field name="note" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_product_spec_tree">
+            <field name="name">Product Specification</field>
+            <field name="model">product.spec</field>
+            <field name="arch" type="xml">
+                <list editable="top" create="1" delete="1" multi_edit="1" string="Product Specification">
+                    <field name="sequence" widget="handle" />
+                    <field name="categ_id" />
+                    <field name="name" />
+                    <field name="value_ids"/>
+                    <field name="product_categories" widget="many2many_tags" optional="hide"/>
+                    <field name="note" optional="hide"/>
+                    <button name="action_read_spec" type="object" string="Setup" class="float-end btn-secondary"/>
+                </list>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_product_spec_form">
+            <field name="name">Product Specification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.spec</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add a new barcode nomenclature
+                </p>
+                <p>
+                    A barcode nomenclature defines how the point of sale identify and interprets
+                    barcodes
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_product_specification" action="action_product_spec_form" parent="sale.prod_config_main" sequence="31"/>
+    </data>
+</odoo>
