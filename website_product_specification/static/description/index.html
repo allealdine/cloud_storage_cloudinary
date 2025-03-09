@@ -3,92 +3,95 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Cloud Storage Cloudinary</title>
+  <title>Website Product Specification</title>
+  <!-- Bootstrap CSS (for styling and equal-height cards) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
     <div class="text-center mt32 mb32">
-      <h1>Cloud Storage Cloudinary</h1>
-      <img class="mt32 mb32" style="max-width: 350px;" src="logo-coloudinary-connect.png" alt="Cloudinary Logo" />
+      <h1>Website Product Specification</h1>
+      <img class="mt32 mb32" style="max-width: 350px;" src="logo-website-product-specification.png"
+        alt="Website Product Specification Logo" />
       <p class="fs-3">
-        Seamlessly integrate <strong>Odoo</strong> with <strong>Cloudinary</strong> to store and manage chatter
-        attachments in the cloud. This module extends the <em>cloud_storage</em> framework to offload files to
-        Cloudinary, offering scalable, secure storage for your Odoo attachments. Perfect for businesses
-        handling images, PDFs, and other documents in chatter.
+        Enhance your <strong>Odoo</strong> website with <strong>Website Product Specification</strong>.
+        This free module integrates with the paid <em>product_specification</em> module to display detailed
+        product specifications on your website’s product pages, improving your online store’s transparency
+        and appeal.
       </p>
 
       <h2>Why This Module Matters?</h2>
-      <p class="fs-4">In today’s fast-paced business environment, managing attachments efficiently is crucial. This
-        module
-        leverages <strong>Cloudinary</strong>—a leading cloud storage platform—to <span
-          class="text-danger"><strong><em>reduce server
-              load</em>,
-            <em>enhance scalability</em>, and <em>secure your data</em></strong></span>. Whether you’re a small business
-        or an
-        enterprise, offloading chatter attachments to the cloud saves resources, speeds up workflows, and
-        ensures your Odoo instance stays lightweight and responsive.
+      <p class="fs-4">
+        Detailed product information drives sales. This module leverages <strong>Odoo’s website</strong> to
+        <span class="text-danger"><strong><em>boost customer trust</em>, <em>enhance product visibility</em>,
+            and <em>improve shopping experience</em></strong></span>. Paired with <em>product_specification</em>,
+        it ensures your customers see all the details they need, right where they shop.
       </p>
     </div>
-    <!-- Use d-flex and align-items-stretch to make cards equal height -->
+
+    <!-- Features and Installation Cards -->
     <div class="row d-flex align-items-stretch mt16 mb16">
-      <div class="col-md-6 ">
-        <div class="card h-100 rounded bg-info bg-opacity-25"> <!-- h-100 ensures full height -->
+      <div class="col-md-6">
+        <div class="card h-100 rounded bg-info bg-opacity-25">
           <div class="card-body">
             <h4 class="card-title">Key Features</h4>
             <ul>
-              <li>Upload attachments directly to Cloudinary from Odoo chatter.</li>
-              <li>Securely store files with signed URLs.</li>
-              <li>Easy configuration via Odoo settings.</li>
-              <li>Requires the <em>cloud_storage</em> base module.</li>
+              <li>Display product specs on website product pages.</li>
+              <li>Integrates seamlessly with <em>product_specification</em>.</li>
+              <li>Enhances <em>website_sale</em> functionality.</li>
+              <li>Free add-on for specification visibility.</li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-md-6 ">
+      <div class="col-md-6">
         <div class="card h-100 rounded bg-info bg-opacity-25">
           <div class="card-body">
             <h4 class="card-title">Installation</h4>
             <ol>
-              <li>Install the <em>cloud_storage</em> module from Odoo Apps.</li>
-              <li>Install the <code>cloudinary</code> Python package: <code>pip install cloudinary</code>.</li>
-              <li>Install this module (<em>Cloud Storage Cloudinary</em>) via Odoo Apps.</li>
+              <li>Install <em>website_sale</em> from Odoo Apps.</li>
+              <li>Install the paid <em>product_specification</em> module.</li>
+              <li>Install this free module via Odoo Apps.</li>
             </ol>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Configuration and Screenshot Cards -->
     <div class="row d-flex align-items-stretch mt16 mb16">
-      <div class="col-md-6 ">
+      <div class="col-md-6">
         <div class="card h-100 rounded bg-success bg-opacity-25">
           <div class="card-body">
             <h4 class="card-title">Configuration</h4>
             <ol>
-              <li>Go to <em>Settings > Technical > Cloud Storage</em>.</li>
-              <li>Set <em>Cloud Storage Provider</em> to "Cloudinary".</li>
-              <li>Enter your Cloudinary Cloud Name, API Key, and API Secret.</li>
-              <li>Save the settings to start storing attachments in Cloudinary.</li>
+              <li>Configure <em>product_specification</em> with product details.</li>
+              <li>Go to <em>Website > Products > Products</em>.</li>
+              <li>Specs automatically display on product pages.</li>
+              <li>No extra setup needed—ready to use!</li>
             </ol>
           </div>
         </div>
       </div>
-      <div class="col-md-6 ">
+      <div class="col-md-6">
         <div class="card h-100 rounded">
           <div class="card-body">
-            <img src="image0.png" alt="Settings Configuration" style="max-width: 100%;">
+            <img src="image0.png" alt="Website Product Specs" style="max-width: 100%;">
           </div>
         </div>
       </div>
     </div>
+
     <h2 class="mt16 mb16">Screenshots & Installation</h2>
-    <h5 class="mb16 mt16">1. Enter Cloudinary Cloud Name, API Key, and API Secret.</h5>
-    <img class="img img-fluid" src="image2.png" alt="Settings Configuration" />
-    <h5 class="mb16 mt16">2. Open Document, click attachment, select file to upload</h5>
-    <img class="img img-fluid" src="image1.png" alt="Settings Configuration" />
-    <h5 class="mb16 mt16">3. All files attached</h5>
-    <img class="img img-fluid" src="image5.png" alt="Settings Configuration" />
-    <h5 class="mb16 mt16">4. Check files on cloudinary console</h5>
-    <img class="img img-fluid" src="image6.png" alt="Settings Configuration" />
+    <h5 class="mb16 mt16">1. Configure specs in product_specification</h5>
+    <img class="img img-fluid" src="image2.png" alt="Configure Specs" />
+    <h5 class="mb16 mt16">2. View specs on website product page</h5>
+    <img class="img img-fluid" src="image1.png" alt="Website Display" />
+    <h5 class="mb16 mt16">3. Customer sees detailed product info</h5>
+    <img class="img img-fluid" src="image5.png" alt="Customer View" />
+    <h5 class="mb16 mt16">4. Enhanced e-commerce experience</h5>
+    <img class="img img-fluid" src="image6.png" alt="E-commerce Page" />
   </div>
 </body>
 
