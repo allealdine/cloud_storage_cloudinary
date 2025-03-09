@@ -26,10 +26,7 @@
     "data": [
         "views/settings.xml",
     ],
-    "images": [
-        "static/description/icon.png",
-        "static/description/screenshot1.png",
-    ],
+    "images": ["static/description/cover.png"],
     "license": "LGPL-3",
     "price": 99.00,
     "currency": "EUR",
