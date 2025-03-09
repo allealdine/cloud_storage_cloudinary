@@ -21,8 +21,8 @@
     "author": "Alle Aldine",
     "website": "https://haiper.id",
     "depends": [
-        "website_sale",  # For website product pages
-        "product_specification",  # Paid dependency
+        "website_sale",
+        "product_specification",
     ],
     "data": [
         "views/templates.xml",
@@ -33,6 +33,6 @@
     "installable": True,
     "auto_install": False,
     "license": "LGPL-3",
-    "price": 0.00,  # Free module
+    "price": 0.00,
     "currency": "EUR",
 }
