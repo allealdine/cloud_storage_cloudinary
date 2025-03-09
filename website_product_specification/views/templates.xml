@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_inherit" inherit_id="website_sale.product" name="Product Specification">
+        <xpath expr="//div[@itemprop='description']" position="before">
+            <t t-if="product.spec_line_ids">
+                <div class="container mt16">
+                    <h3>Product Specifications</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="product.spec_line_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        <span t-field="line.spec_id" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.value_id"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
