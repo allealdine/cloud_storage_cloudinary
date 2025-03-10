@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_import_product_wizard_form" model="ir.ui.view">
+        <field name="name">import.product.wizard.form</field>
+        <field name="model">import.product.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Product from Ecommerce">
+                <group>
+                    <field name="source"/>
+                    <field name="source_url" placeholder="e.g., https://www.tokopedia.com/search?q=laptop"/>
+                    <field name="preview_data" nolabel="1" widget="text" readonly="1"/>
+                </group>
+                <group string="Images">
+                    <field name="image_html" nolabel="1" widget="html"/>
+                </group>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="btn-primary"/>
+                    <button name="action_preview" string="Preview" type="object" class="btn-secondary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_product_wizard" model="ir.actions.act_window">
+        <field name="name">Import Product from Ecommerce</field>
+        <field name="res_model">import.product.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_import_product_ecommerce" name="Import Product from Ecommerce" parent="sale.prod_config_main" action="action_import_product_wizard" sequence="20"/>
+</odoo>
